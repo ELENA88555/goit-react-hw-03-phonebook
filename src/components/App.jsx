@@ -75,22 +75,20 @@ export class App extends Component {
           <h2 className={css.titleText}> Contacts</h2>
 
           {contacts.length < 1 ? (
-            <p className={css.textApp}> Please add contact</p>
-          ) : (
-            <Filter
-              value={filter}
-              changeFilter={this.filtrChangeHandler}
-            ></Filter>
-          )}
-          {contacts.length < 1 ? (
             <p className={css.textApp}> You have no contacts saved</p>
           ) : (
-            <ContactList
-              title="Contacts"
-              contacts={visibleContacts}
-              id={this.loginInputId}
-              onDeleteBtn={this.btnDeleteHandler}
-            ></ContactList>
+            <>
+              <Filter
+                value={filter}
+                changeFilter={this.filtrChangeHandler}
+              ></Filter>
+              <ContactList
+                title="Contacts"
+                contacts={visibleContacts}
+                id={this.loginInputId}
+                onDeleteBtn={this.btnDeleteHandler}
+              ></ContactList>
+            </>
           )}
         </div>
       </div>
